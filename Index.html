@@ -1,64 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Moodify</title>
-        <!--Boostrap's CSS-->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <!--Custom CSS-->
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-
-
-
-<!-- Application Insights Script Bellow here -->
-        <script type="text/javascript">
-  var appInsights=window.appInsights||function(config){
-    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
-    }({
-        instrumentationKey:"1fef016a-1c7c-4e3a-9a3a-9ace9ba7ded6"
-    });
-       
-    window.appInsights=appInsights;
-    appInsights.trackPageView();
-</script>
-<!-- End Of Application Insights script -->
-
-        
-    </head>
+    <head><title>Moodify</title></head>
     <body>
         <div class="container" id="page-container">
-            <h1 id="app-name">
-                <span class="glyphicon glyphicon-headphones"></span> moodify
-            </h1>
-            <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
-
+            <h1 id="app-name"><span class="glyphicon glyphicon-headphones"></span> moodify</h1>
             <h2 id="page-header">
                 Get song recommendations based on your mood.
             </h2>
+            <img id="selected-img" src="">
+            <h4 id="track-name"></h4>
             <div class="btn-wrapper">
                 <label class="btn btn-info" for="my-file-selector">
-                    <input id="my-file-selector" type="file">
+                    <input id="my-file-selector" type="file" style="display:none;">
                     Upload a picture of you
                 </label>
                 <button type="button" class="btn btn-info" id="refreshbtn">Another song please</button>
             </div>
+            <div id="musicplayer"></div>
         </div>
-        <!-- 
-            NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
-            will sort that in later bootcamps with task-runners and the like.
-            For now this is just a demonstration.
-
-            Alternatively can use CDNs for bootstrap/jquery
-        -->
-
-        <!--jQuery Script-->
-        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-        <!--Bootstrap Script-->
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!--Custom Script-->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-        <script src="./js/main.js"></script>
-
-        
-        
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+        <script src="js/bundle.js"></script>
+        <script src="js/bootstrap.js"></script>
     </body>
 </html>
