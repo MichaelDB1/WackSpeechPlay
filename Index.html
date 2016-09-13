@@ -2,10 +2,7 @@
 <html>
     <head>
         <title>Moodify</title>
-        <!--Boostrap's CSS-->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <!--Custom CSS-->
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
+
 
 
 
@@ -34,14 +31,20 @@
             <h2 id="page-header">
                 Get song recommendations based on your mood.
             </h2>
+            <h4 id="track-name"></h4>
             <div class="btn-wrapper">
                 <label class="btn btn-info" for="my-file-selector">
-                    <input id="my-file-selector" type="file">
+                    <input id="my-file-selector" type="file" style="display:none">
                     Upload a picture of you
                 </label>
                 <button type="button" class="btn btn-info" id="refreshbtn">Another song please</button>
             </div>
+            <div id="musicplayer"></div>
         </div>
+                <!--Boostrap's CSS-->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <!--Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <!-- 
             NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
             will sort that in later bootcamps with task-runners and the like.
