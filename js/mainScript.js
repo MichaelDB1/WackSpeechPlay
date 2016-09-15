@@ -12,7 +12,7 @@ function updateUI(obj) {
 
 tbtn.on("click", function () {
 
-    var message = textareabox.value;
+    var message = textareabox.innerText;
 console.log (message);
     translateText(message, function (response) {
         messageObj = translation;
@@ -47,10 +47,11 @@ function translateText(message) {
             xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
         },
         type: 'POST',
-        data: JSON.stringify({ 'text': message }),
+        data: message,
         processData: false
     }).done(function (data) {
         if (data.length != 0) {
+            JSON.stringify({ 'text': message });
             var translation = data.contents.translated
         }
         else {
@@ -62,6 +63,9 @@ function translateText(message) {
         console.log(error.getAllResponseHeaders());
     })
 }
+
+        
+
 
 /*
 function translateText(message) {
