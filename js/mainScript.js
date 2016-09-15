@@ -6,7 +6,7 @@ var test =$("#test");
 var translation;
 
 function updateUI(obj) {
-    output.innerHTML = messageObj;
+    output.innerHTML = "The Translation for that is><br>" + messageObj;
 };
 
 
@@ -20,23 +20,17 @@ tbtn.on("click", function () {
 });
 
 
+
 function translateText(message, response) {
     $.ajax({
         url: "http://api.funtranslations.com/translate/yoda.json?text="+message,
         
         success: function (data) {
-             console.log(data);
-           // parsed = JSON.parse(data);
+            console.log(data);
             var holder = data.contents;
             var translation = holder[0].translated;
             console.log(translation);
-           // var translation = parsed(contents.translated);
-            //var other = Data[1].contents.translated;
-           // console.log(translation);
-         //   console.log(other);
-         /* var translation = JSON.parse(data).Content.translated;
-          /*  response(translation);
-            console.log  ("translation is equal to "+translation);*/
+
         },
             error: function(){
                 alert("Data hasn't come in...");             
