@@ -2,7 +2,6 @@ var tbtn = $("#tbtn");
 var textareabox = $("#comment") [0];
 var output = $("#output")[0];
 var messageObj;
-var test =$("#test");
 var translation;
 var messageform;
  
@@ -23,7 +22,7 @@ tbtn.on("click", function () {
     console.log (message);
     var messageform = {'text' : message}
   
-  
+    console.log (messageform);
   
    // messageform= "text:" + message;
     //var messageform = new FormData();
@@ -68,7 +67,7 @@ function translateText(messageform, response) {
             xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
         },
         type: 'POST',
-        datatype: FormData,
+        
         data:  messageform,
         processData: false
     }).done(function (data) {
