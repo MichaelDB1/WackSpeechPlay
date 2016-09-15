@@ -40,3 +40,5 @@ function updateUI(obj) {
     output.innerHTML = messageObj;
 };
 
+}
+
