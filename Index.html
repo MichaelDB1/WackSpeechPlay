@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Moodify</title>
-
-
-
-
+        <title>Wack Speech Play</title>
+        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+       
 <!-- Application Insights Script Bellow here -->
     <script type="text/javascript">
   var appInsights=window.appInsights||function(config){
@@ -17,56 +16,51 @@
     window.appInsights=appInsights;
     appInsights.trackPageView();
 </script>
-<!-- End Of Application Insights script -->
-
-        
+<!-- End Of Application Insights script -->   
     </head>
     <body>
-        <div class="container" id="page-container">
-            <h1 id="app-name">
-                <span class="glyphicon glyphicon-headphones"></span> moodify
-            </h1>
-            <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
+        <div class="holder" id="page-holder">
+            <img class="LogoTitle" src="images/WakeSpeechPlay.png" alt="Wake Speech Play">     
 
-            <h2 id="page-header">
-                Get song recommendations based on your mood.
+            <h1 id="Intro">
+                Welcome to Wack Speech Play! Enter some text and it will be translated as if<br> said by a certain character then spoken back out to you.
+            </h1>                   
+            <h2 id="InfoBarHeaders">
+                Enter the text you would like to input bellow.
             </h2>
-            <h4 id="track-name"></h4>
-            <div class="btn-wrapper">
-                <label class="btn btn-info" for="my-file-selector">
-                    <input id="my-file-selector" type="file" style="display:none">
-                    Upload a picture of you
-                </label>
-                <button type="button" class="btn btn-info" id="refreshbtn">Another song please</button>
+
+            <div class="form-group">
+                <textarea class="form-control" rows="3"  id="comment"></textarea>
+                <h2 id="pickChar">
+                Pick a character type to translate to with the button bellow.
+                </h2>
+                <div class="input-group">
+              
+               <span class="input-group-addon">
+                <select class="form-control" id="sel1">
+                    <option>Yoda</option>
+                    <option>Pirate</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+                <button class="btn btn-primary" type="button" id="tbtn" title="Translate message">Translate</button>
+                </span>
+
+            </div>   
+            <h2 id="OutputBarHeader">
+                The coversion of your text is...
+            </h2>
+            <div id="test">
             </div>
-            <div id="musicplayer"></div>
-        </div>
+            <div id="output">
+            </div> </div>
+            </div>
         
-        
-        
-        <!--Boostrap's CSS-->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <!--Custom CSS-->
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <!-- 
-            NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
-            will sort that in later bootcamps with task-runners and the like.
-            For now this is just a demonstration.
 
-            Alternatively can use CDNs for bootstrap/jquery
-        -->
-
-        <!--jQuery Script-->
-        
-        <!--Bootstrap Script-->
-      <!--  <script src="js/bootstrap.min.js"></script> -->
-        <!--Custom Script-->
-        <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/bootstrap.js"></script>
-
-        
-        
     </body>
+            <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/mainScript.js"></script>
 </html>

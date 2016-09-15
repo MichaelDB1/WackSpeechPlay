@@ -1,5 +1,5 @@
 html { 
-    background: url("http://theme.dima-lab.com/okab/images/landing-page-iphone/blurred-home-bg.jpg") no-repeat center center fixed; 
+    background: url(../images/large-tileable-abstract-nebula-textures-1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -7,41 +7,78 @@ html {
 }
 
 body {
-    color: white;
+    color: Yellow;
     background-color: transparent;
+    font: bold;
 }
 
-h1#app-name {
-    font-size:84px;
+h1#Intro {
+    padding-top: 5px;
+    font-size:15px;
+    padding-bottom: 5px;
 }
 
-button#refreshbtn {
+button#submitBtn {
     display:none;
 }
 
-img#selected-img{
-    width:150px;
-    height:150px;
-    padding:20px;
-    display:none;
-    margin: 0 auto;
+.form-group textarea.form-control {
+    max-width: 55%;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    background: lightseagreen;
+    color:yellow;    
 }
 
-h2#page-header {
-    padding-top:20px;
-    padding-bottom:20px;
+.form-group select.form-control {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: red;
+    color: yellow;
+   
 }
 
-body #page-container {
-    margin-top: 150px;
+.btn-primary {
+    background: yellow;
+    color: red;
+}
+
+.input-group-addon{
+    background-color:rgba(0,0,0,0);
+    border:none;
+}
+
+.input-group{
+    max-width: 30%;
+
+    margin-left: auto;
+    margin-right: auto;
+    background:transparent;
+     
+}
+
+h2#InfoBarHeaders {
+    padding-top:2px;
+    font-size: 10px;
+    padding-bottom:2px;
+}
+h2#pickChar {
+    padding-top:1px;
+    font-size: 10px;
+    padding-bottom:1px;
+}
+
+h2#OutputBarHeader{
+    padding-top:2px;
+    font-size: 10px;
+    padding-bottom:2px;
+}
+
+body #page-holder {
+    margin-top: 30px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-.btn-wrapper {
-    padding: 20px 0;
-}
-
-input#my-file-selector {
-    display:none;
-}
