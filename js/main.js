@@ -95,6 +95,12 @@ var Mood = (function () {
     }
     return Mood;
 }());
+
+
+
+
+
+
 var happy = new Mood("happy", "http://emojipedia-us.s3.amazonaws.com/cache/a0/38/a038e6d3f342253c5ea3c057fe37b41f.png");
 var sad = new Mood("sad", "https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji.png?9898922749706957214");
 var angry = new Mood("angry", "https://cdn.shopify.com/s/files/1/1061/1924/files/Very_Angry_Emoji.png?9898922749706957214");
@@ -116,6 +122,12 @@ function getCurrMood(scores) {
     }
     return currentMood;
 }
+
+
+
+
+
+
 // Section of code that handles the music and soundcloud
 //A Song class which has the song's name and URL on soundcloud
 var Song = (function () {
@@ -157,6 +169,11 @@ var Playlist = (function () {
     };
     return Playlist;
 }());
+
+
+
+
+
 var myPlaylist;
 function init() {
     // init playlist
@@ -174,6 +191,9 @@ function init() {
     // init soundcloud
     initSC();
 }
+
+
+
 function loadSong(currentMood) {
     var songSelected = myPlaylist.getRandSong(currentMood.name); // gets a random song based on the moodd
     var track_url = songSelected.url;

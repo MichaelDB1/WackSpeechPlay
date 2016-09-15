@@ -3,12 +3,18 @@ var textareabox = $("#comment") [0];
 var output = $("#output")[0];
 var messageObj;
 var test =$("#test");
+var translation;
+
+function updateUI(obj) {
+    output.innerHTML = messageObj;
+};
+
 
 tbtn.on("click", function () {
 
     var message = textareabox.value;
     translateText(message, function (response) {
-        messageObj = new TranslatedMessage(textBox.value, response);
+        messageObj = translation;
         updateUI(messageObj);
     });
 });
@@ -16,10 +22,11 @@ tbtn.on("click", function () {
 
 function translateText(message, response) {
     $.ajax({
-        url: "http://api.funtranslations.com/translate/yoda.json?text="+message,
+        url: "http://api.funtranslations.com/translate/yoda.json?text=",
         
         success: function (data) {
-            var translation = data.contents.translated;
+            
+            var translation = JSON.parse(data).Content.translated;
             response(translation);
             console.log  ("translation is equal to "+translation);
         },
@@ -52,9 +59,7 @@ function translateText(message, response) {
 */
 
 
-function updateUI(obj) {
-    output.innerHTML = messageObj;
-};
+
 
 }
 
