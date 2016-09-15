@@ -22,7 +22,7 @@ tbtn.on("click", function () {
 
 function translateText(message, response) {
     $.ajax({
-        url: "http://api.funtranslations.com/translate/yoda.json?text=",
+        url: "http://api.funtranslations.com/translate/yoda.json?text="+message,
         
         success: function (data) {
             console.log(data);
