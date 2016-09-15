@@ -14,7 +14,21 @@ tbtn.on("click", function () {
 });
 
 
+function translateText(message, response) {
+    $.ajax({
+        url: "http://api.funtranslations.com/translate/yoda.json",
+        
+        success: function (data) {
+            var translation = data.contents.translated;
+            response(translation);
+            console.log  ("translation is equal to "+translation);
+        },
+            error: function(){
+                alert("Data hasn't come in...");             
+            }
+        });
 
+        /*
 
 function translateText(message, response) {
     $.ajax({
@@ -35,7 +49,7 @@ function translateText(message, response) {
                 alert("Data hasn't come in...");             
             }
         });
-
+*/
 
 
 function updateUI(obj) {
