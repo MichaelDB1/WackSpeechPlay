@@ -4,13 +4,6 @@ var output = $("#output")[0];
 var messageObj;
 var test =$("#test");
 
-function formatData(text) {
-    return "{\"documents\": [{"
-        + "\"language\": \"en\","
-        + "\"id\": \"1\","
-        + "\"text\": \"" + text + "\"}]}";
-}
-
 tbtn.on("click", function () {
 
     var message = textareabox.value;
@@ -46,16 +39,3 @@ function updateUI(obj) {
     output.innerHTML = messageObj;
 }
 
-
-
-
-
-var AnalysedMessage = (function () {
-    function AnalysedMessage(text, sentiment) {
-        this.text = text;
-        this.sentiment = sentiment;
-        this.text = text;
-        this.sentiment = sentiment;
-    }
-    return AnalysedMessage;
-}())};
