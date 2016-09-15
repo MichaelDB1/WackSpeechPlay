@@ -16,20 +16,13 @@ function updateUI(obj) {
 tbtn.on("click", function () {
 
     var message = textareabox.value;
-    //form.append("text", message);
-   
-   
     console.log (message);
+
     var messageform = {'text' : message}
   
     console.log (messageform);
   
-   // messageform= "text:" + message;
-    //var messageform = new FormData();
-   // messageform.append("text", message)
 
-   // console.log (messageform);
-  //  console.log (messageform);
 
     translateText(messageform, function (response) {
         messageObj = translation;
@@ -38,24 +31,7 @@ tbtn.on("click", function () {
 });
 
 
-/*
-function translateText(message, response) {
-    $.ajax({
-        url: "http://api.funtranslations.com/translate/yoda.json?text="+message,
-        
-        success: function (data) {
-            console.log(data);
-            var holder = data.contents;
-            var translation = holder[0].translated;
-            console.log(translation);
 
-        },
-            error: function(){
-                alert("Data hasn't come in...");             
-            }
-        });
-
-        */
 
 
 
