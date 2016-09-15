@@ -1,9 +1,9 @@
 var tbtn = $("#tbtn");
 var textareabox = $("#comment") [0];
-var output = $("#output")[0];
-var messageObj;
-var translation;
-var messageform;
+var output : String = $("#output")[0];
+var messageObj : String;
+var translation : String;
+var messageform: Object;
  
 
 
@@ -15,7 +15,7 @@ function updateUI(obj) {
 
 tbtn.on("click", function () {
 
-    var message = textareabox.value;
+    var message : String = textareabox.value;
     //form.append("text", message);
    
    
