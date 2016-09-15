@@ -25,10 +25,10 @@ function translateText(message, response) {
         url: "http://api.funtranslations.com/translate/yoda.json?text=",
         
         success: function (data) {
-            
-            var translation = JSON.parse(data).Content.translated;
+            console.log(data);
+          /*  var translation = JSON.parse(data).Content.translated;
             response(translation);
-            console.log  ("translation is equal to "+translation);
+            console.log  ("translation is equal to "+translation);*/
         },
             error: function(){
                 alert("Data hasn't come in...");             
