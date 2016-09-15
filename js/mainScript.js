@@ -18,8 +18,13 @@ tbtn.on("click", function () {
 
     var message = textareabox.value;
     //form.append("text", message);
+   
+   
     console.log (message);
     var messageform = {'text' : message}
+  
+  
+  
    // messageform= "text:" + message;
     //var messageform = new FormData();
    // messageform.append("text", message)
