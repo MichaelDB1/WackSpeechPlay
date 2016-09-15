@@ -27,6 +27,7 @@ function translateText(message, response) {
 
             var translation = data.contents.translated;
             response(translation);
+            console.log  ("translation is equal to "+translation);
         },
             error: function(){
                 alert("Data hasn't come in...");             
