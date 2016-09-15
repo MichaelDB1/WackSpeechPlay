@@ -14,6 +14,8 @@ tbtn.on("click", function () {
 });
 
 
+
+
 function translateText(message, response) {
     $.ajax({
         url: "http://api.funtranslations.com/translate/yoda.json",
@@ -22,7 +24,7 @@ function translateText(message, response) {
         },
         type: 'POST',
         data: message,
-        processData: true,
+        processData: false,
         success: function (data) {
 
             var translation = data.contents.translated;
