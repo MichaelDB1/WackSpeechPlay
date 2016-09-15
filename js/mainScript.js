@@ -37,5 +37,5 @@ function translateText(message, response) {
 
 function updateUI(obj) {
     output.innerHTML = messageObj;
-}
+};
 
