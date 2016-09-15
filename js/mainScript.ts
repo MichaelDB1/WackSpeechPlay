@@ -1,6 +1,6 @@
 var tbtn = $("#tbtn");
 var textareabox = $("#comment") [0];
-var output : String = $("#output")[0];
+var output = $("#output")[0];
 var messageObj : String;
 var translation : String;
 var messageform: Object;
@@ -8,7 +8,7 @@ var messageform: Object;
 
 
 
-function updateUI(obj) {
+function updateUI(obj) : void {
     output.innerHTML = "The Translation for that is><br>" + messageObj;
 };
 
