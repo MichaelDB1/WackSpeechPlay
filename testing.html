@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+
+<script>
+var form = new FormData();
+form.append("text", "effefefe");
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.funtranslations.com/translate/yoda.json",
+  "method": "POST",
+  "headers": {
+    "x-funtranslations-api-secret": "bgC3XPappgOdv2oYE07dzgeF",
+    "cache-control": "no-cache",
+    "postman-token": "80b36a67-c84d-4f26-9506-08628ae3efda"
+  },
+  "processData": false,
+  "contentType": false,
+  "mimeType": "multipart/form-data",
+  "data": form
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+</script>
+</body>
+</html>

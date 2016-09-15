@@ -7,7 +7,6 @@ var messageform;
  
 
 
-
 function updateUI(obj) {
     output.innerHTML = "The Translation for that is><br>" + messageObj;
 };
@@ -15,14 +14,9 @@ function updateUI(obj) {
 
 tbtn.on("click", function () {
 
-    var message = textareabox.value;
-    console.log (message);
-
-    var messageform = {'text' : message}
-  
-    console.log (messageform);
-  
-
+    var message = textareabox.value; 
+    var messageform = new FormData();
+    messageform.append("text", "randomcrap");
 
     translateText(messageform, function (response) {
         messageObj = translation;
@@ -32,24 +26,21 @@ tbtn.on("click", function () {
 
 
 
-
-
-
 function translateText(messageform, response) {
     $.ajax({
         url: "http://api.funtranslations.com/translate/yoda.json",
-        beforeSend: function (xhrObj) {
-            
-            xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
-        },
+       // beforeSend: function (xhrObj) {
+         //   xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
+      //  },
         type: 'POST',
-        
-        data:  messageform,
+        data: messageform,
+        // JSON.stringify({'text': message }),
         processData: false
     }).done(function (data) {
         if (data.length != 0) {
           //  JSON.stringify({ 'text': message });
             var translation = data.contents.translated
+            response(translation);
         }
         else {
             pageheader.innerHTML = "No text detected";
@@ -61,31 +52,5 @@ function translateText(messageform, response) {
     })
 }
 
-        
 
 
-/*
-function translateText(message) {
-    $.ajax({
-        url: "http://api.funtranslations.com/translate/yoda.json",
-        beforeSend: function(xhrObj) { 
-        xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF"); 
-        },
-        type: 'POST',
-        data: message,
-        processData: false,
-    })
-        .done(function (data) {
-        if (data.length != 0) {
-            var translation = data.contents.translated
-        }
-        else {
-            pageheader.innerHTML = "No text detected";
-        }
-    })
-        .fail(function (error) {
-          alert("Data hasn't come in");
-        console.log(error.getAllResponseHeaders());
-    })
-}
-*/
