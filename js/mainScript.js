@@ -25,9 +25,16 @@ function translateText(message, response) {
         url: "http://api.funtranslations.com/translate/yoda.json?text="+message,
         
         success: function (data) {
-            console.log(data);
-            var translation = Data[1].contents.translated;
-          var translation = JSON.parse(data).Content.translated;
+             console.log(data);
+           // parsed = JSON.parse(data);
+            var holder = data.contents;
+            var translation = holder[0].translated;
+            console.log(translation);
+           // var translation = parsed(contents.translated);
+            //var other = Data[1].contents.translated;
+           // console.log(translation);
+         //   console.log(other);
+         /* var translation = JSON.parse(data).Content.translated;
           /*  response(translation);
             console.log  ("translation is equal to "+translation);*/
         },
