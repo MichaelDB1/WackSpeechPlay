@@ -26,9 +26,9 @@ function translateText(message, response) {
         
         success: function (data) {
             console.log(data);
-            var translation = Content.translated;
-          /*  var translation = JSON.parse(data).Content.translated;
-            response(translation);
+            var translation = Data[1].contents.translated;
+          var translation = JSON.parse(data).Content.translated;
+          /*  response(translation);
             console.log  ("translation is equal to "+translation);*/
         },
             error: function(){
