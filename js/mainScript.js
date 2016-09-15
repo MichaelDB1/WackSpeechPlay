@@ -16,7 +16,7 @@ tbtn.on("click", function () {
 
 function translateText(message, response) {
     $.ajax({
-        url: "http://api.funtranslations.com/translate/yoda.json?text="+message,
+        url: "http://api.funtranslations.com/translate/yoda.json",
         beforeSend: function(xhrObj) { 
         xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF"); 
         },
