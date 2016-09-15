@@ -4,6 +4,10 @@ var output = $("#output")[0];
 var messageObj;
 var test =$("#test");
 var translation;
+var messageform;
+ 
+
+
 
 function updateUI(obj) {
     output.innerHTML = "The Translation for that is><br>" + messageObj;
@@ -12,9 +16,18 @@ function updateUI(obj) {
 
 tbtn.on("click", function () {
 
-    var message = textareabox.innerText;
-console.log (message);
-    translateText(message, function (response) {
+    var message = textareabox.value;
+    //form.append("text", message);
+    console.log (message);
+
+   // messageform= "text:" + message;
+    var messageform = new FormData();
+    messageform.append("text", message)
+
+   // console.log (messageform);
+  //  console.log (messageform);
+
+    translateText(messageform, function (response) {
         messageObj = translation;
         updateUI(messageObj);
     });
@@ -40,18 +53,22 @@ function translateText(message, response) {
 
         */
 
-function translateText(message) {
+
+
+function translateText(messageform, response) {
     $.ajax({
         url: "http://api.funtranslations.com/translate/yoda.json",
         beforeSend: function (xhrObj) {
+            
             xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
         },
         type: 'POST',
-        data: message,
+        datatype: FormData,
+        data:  messageform,
         processData: false
     }).done(function (data) {
         if (data.length != 0) {
-            JSON.stringify({ 'text': message });
+          //  JSON.stringify({ 'text': message });
             var translation = data.contents.translated
         }
         else {
