@@ -29,7 +29,7 @@ function translateText(message, response) {
         },
         type: 'POST',
         data: message,
-        processData: false,
+        processData: true,
         success: function (data) {
 
             var translation = data.contents.translated;
