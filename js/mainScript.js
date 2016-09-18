@@ -29,6 +29,43 @@ tbtn.on("click", function () {
 
 
 
+
+
+
+
+
+
+function translateText(message, callback) {
+    $.ajax({
+       url: "http://api.funtranslations.com/translate/pirate.json",
+     // beforeSend: function (xhrObj) {
+     //    xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
+    //   },
+        type: 'POST',
+        data: 'text=' + message,
+        processData: false
+    }).done(function (data) {
+        if (data.length != 0) {
+            alert(data.contents.translated);
+            var translation = data.contents.translated;
+            console.log (translation);      
+            callback(translation);
+        }
+        else {
+            alert("No text detected");
+        }
+    })
+    .fail(function (error) {
+        alert("Data hasn't come in!, perhaps just try using the yoda translation as I don't have keys for the others as that would cost me too much");
+        console.log(error.getAllResponseHeaders());
+    })
+}
+
+
+
+/*
+
+
 function translateText(message, callback) {
     $.ajax({
         url: "http://api.funtranslations.com/translate/yoda.json",
@@ -37,13 +74,9 @@ function translateText(message, callback) {
        },
         type: 'POST',
         data: 'text=' + message,
-        //data: JSON.stringify({'text': message }),
-       // dataType: 'json',
-        // JSON.stringify({'text': message }),
         processData: false
     }).done(function (data) {
         if (data.length != 0) {
-          //  JSON.stringify({ 'text': message });
             alert(data.contents.translated);
             var translation = data.contents.translated;
             console.log (translation);      
@@ -61,3 +94,4 @@ function translateText(message, callback) {
 
 
 
+*/
