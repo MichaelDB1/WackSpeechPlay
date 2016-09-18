@@ -31,7 +31,7 @@ tbtn.on("click", function () {
    // console.log (messageform);
   //  console.log (messageform);
 
-    translateText(messageform, function (response) {
+    translateText(message, function (response) {
         messageObj = translation;
         updateUI(messageObj);
     });
@@ -59,7 +59,7 @@ function translateText(message, response) {
 
 
 
-function translateText(messageform, response) {
+function translateText(message, response) {
     $.ajax({
         url: "http://api.funtranslations.com/translate/yoda.json",
         beforeSend: function (xhrObj) {
@@ -67,8 +67,8 @@ function translateText(messageform, response) {
             xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
         },
         type: 'POST',
-        datatype: FormData,
-        data:  messageform,
+       
+        data:  message,
         processData: false
     }).done(function (data) {
         if (data.length != 0) {
