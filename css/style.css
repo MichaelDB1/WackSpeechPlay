@@ -55,8 +55,26 @@ button#submitBtn {
 
     margin-left: auto;
     margin-right: auto;
-    background:transparent;
-     
+    background:transparent;     
+}
+
+
+.panel-body{
+    max-width: 55%;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    background: lightseagreen;
+    color:yellow;    
+}
+
+.panel-heading{
+    max-width: 55%;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    background: yellow;
+    color:red;    
 }
 
 h2#InfoBarHeaders {

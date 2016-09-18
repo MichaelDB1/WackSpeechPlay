@@ -8,7 +8,8 @@ var messageform;
 
 
 function updateUI(obj) {
-    output.innerHTML = "The Translation for that is><br>" + messageObj;
+  //  output.innerHTML = "The Translation for that is<br>" + messageObj;
+    document.getElementById("AnOutputbox").innerHTML = messageObj;
 };
 
 
@@ -18,23 +19,24 @@ tbtn.on("click", function () {
     var messageform = new FormData();
     messageform.append("text", "randomcrap");
 
-    translateText(message, function (response) {
-        messageObj = translation;
+    translateText(message, function (textconversion) {
+        messageObj = textconversion;
+        console.log (translation);
+        console.log (messageObj);
         updateUI(messageObj);
     });
 });
 
 
 
-function translateText(message, response) {
+function translateText(message, callback) {
     $.ajax({
         url: "http://api.funtranslations.com/translate/yoda.json",
        beforeSend: function (xhrObj) {
            xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
        },
         type: 'POST',
-        dataType: "jsonp",
-        data: ({ 'text': message }),
+        data: 'text=' + message,
         //data: JSON.stringify({'text': message }),
        // dataType: 'json',
         // JSON.stringify({'text': message }),
@@ -42,11 +44,13 @@ function translateText(message, response) {
     }).done(function (data) {
         if (data.length != 0) {
           //  JSON.stringify({ 'text': message });
-            var translation = data.contents.translated
-            response(translation);
+            alert(data.contents.translated);
+            var translation = data.contents.translated;
+            console.log (translation);      
+            callback(translation);
         }
         else {
-            pageheader.innerHTML = "No text detected";
+            alert("No text detected");
         }
     })
     .fail(function (error) {
