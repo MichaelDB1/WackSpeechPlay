@@ -21,7 +21,7 @@ $('#characterSelection').change(function () {
 function updateUI(obj) {
   //  output.innerHTML = "The Translation for that is<br>" + messageObj;
     document.getElementById("AnOutputbox").innerHTML = messageObj;
-    responsiveVoice.speak(messageObj, "US English Male", {rate: 0.7});
+    responsiveVoice.speak(messageObj, "UK English Male", {rate: 0.85});
 };
 
 
