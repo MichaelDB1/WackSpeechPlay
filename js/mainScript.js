@@ -125,7 +125,7 @@ tbtn.on("click", function () {
 
 function translateText(message, URL, callback) {
     $.ajax({
-       url: "http://api.funtranslations.com/translate/pirate.json",
+       url: "" + URL,
      // beforeSend: function (xhrObj) {
      //    xhrObj.setRequestHeader("X-FunTranslations-Api-Secret", "bgC3XPappgOdv2oYE07dzgeF");
     //   },
