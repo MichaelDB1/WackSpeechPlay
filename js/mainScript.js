@@ -99,8 +99,8 @@ tbtn.on("click", function () {
         console.log("is this fuction running")
         myTranslator = character;
         myURL = URL;
-        console.log(myTranslator);
-        console.log(myURL);
+        //console.log(myTranslator);
+      //  console.log(myURL);
     })
      })
 
