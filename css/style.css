@@ -1,9 +1,5 @@
 html { 
-    background: url(../images/large-tileable-abstract-nebula-textures-1.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
     
 }
 
@@ -11,6 +7,11 @@ body {
     color: Yellow;
     background-color: transparent;
     font: bold;
+    background: url(../images/large-tileable-abstract-nebula-textures-1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
 }
 

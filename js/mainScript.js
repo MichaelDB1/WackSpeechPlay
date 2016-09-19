@@ -14,6 +14,24 @@ var myTranslator;
 $('#characterSelection').change(function () {
     var characterSelection = $(this).find("option:selected").text();
     console.log("changed to " + characterSelection);
+    if (characterSelection == "Pirate") {
+        document.getElementById('theBod').style.background="url(../images/pirate.png)";
+        }  
+    else if (characterSelection == "Minion") {
+        document.getElementById('theBod').style.background="url(../images/Banana.jpg)";
+        }  
+    else if (characterSelection == "Dothraki") {
+        document.getElementById('theBod').style.background="url(../images/horse.jpg)";
+        }  
+    else if (characterSelection == "Gungan") {
+        document.getElementById('theBod').style.background="url(../images/water.jpg)";
+        }  
+    else if (characterSelection == "Shakespeare") {
+        document.getElementById('theBod').style.background="url(../images/Fool.jpg)";
+        }      
+     else {
+         document.getElementById('theBod').style.background="url(../images/space.jpg)";
+        }
 
 });
 
