@@ -4,12 +4,14 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    
 }
 
 body {
     color: Yellow;
     background-color: transparent;
     font: bold;
+
 }
 
 h1#Intro {
@@ -20,6 +22,7 @@ h1#Intro {
 
 button#submitBtn {
     display:none;
+
 }
 
 .form-group textarea.form-control {
@@ -28,7 +31,12 @@ button#submitBtn {
     margin-left: auto;
     margin-right: auto;
     background: lightseagreen;
-    color:yellow;    
+    color:yellow;
+    -webkit-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    -moz-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    -o-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);    
+
 }
 
 .form-group select.form-control {
@@ -37,6 +45,10 @@ button#submitBtn {
     margin-right: auto;
     background: red;
     color: yellow;
+    -webkit-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    -moz-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    -o-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);    
    
 }
 
@@ -65,7 +77,11 @@ button#submitBtn {
     margin-left: auto;
     margin-right: auto;
     background: lightseagreen;
-    color:yellow;    
+    color:yellow; 
+    -webkit-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    -moz-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    -o-box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);
+    box-shadow: 10px 26px 158px 2px rgba(255,255,255,1);      
 }
 
 .panel-heading{
