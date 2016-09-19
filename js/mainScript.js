@@ -13,7 +13,8 @@ var myTranslator;
 
 $('#characterSelection').change(function () {
     var characterSelection = $(this).find("option:selected").text();
-    console.log("changed to " + characterSelection);  
+    console.log("changed to " + characterSelection);
+
 });
 
 
@@ -33,25 +34,31 @@ function getCharacter(characterSelection, callback) {
     if (characterSelection == "Pirate") {
         charcter ="Pirate";
         URL = "http://api.funtranslations.com/translate/pirate.json";
+        responsiveVoice.speak("It's a pirates Life for me!", "UK English Male", {rate: 0.8});
         }  
     else if (characterSelection == "Minion") {
         character = "Minion";
         URL = "http://api.funtranslations.com/translate/minion.json";
+        responsiveVoice.speak("pik modohs meeno ex deep pik ex gib banana", "UK English Male", {rate: 0.8});
         }  
     else if (characterSelection == "Dothraki") {
         character = "Dothraki";
         URL = "http://api.funtranslations.com/translate/dothraki.json";
+        responsiveVoice.speak("The Stallion that mounts the world has no need for iron chairs", "UK English Male", {rate: 0.8});
         }  
     else if (characterSelection == "Gungan") {
         character = "Gungan";
         URL = "http://api.funtranslations.com/translate/gungan.json";
+        responsiveVoice.speak("How rude", "UK English Male", {rate: 0.8});
         }  
     else if (characterSelection == "Shakespeare") {
         character = "Shakespeare";
         URL = "http://api.funtranslations.com/translate/shakespeare.json";
+        responsiveVoice.speak("Have more than you show, speak less than you know", "UK English Male", {rate: 0.8});
         }      
      else {
         character = "Yoda";
+        responsiveVoice.speak("Do or do not There is no try", "UK English Male", {rate: 0.8});
         }
     callback(character, URL);
         };
