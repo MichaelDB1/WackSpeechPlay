@@ -76,7 +76,7 @@ function getCharacter(characterSelection, callback) {
         }      
      else {
         character = "Yoda";
-        responsiveVoice.speak("Do or do not There is no try", "UK English Male", {rate: 0.8});
+        responsiveVoice.speak("Do, or do not, There is no try", "UK English Male", {rate: 0.8});
         }
     callback(character, URL);
         };
