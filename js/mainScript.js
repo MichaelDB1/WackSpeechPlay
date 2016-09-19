@@ -144,7 +144,7 @@ function translateText(message, URL, callback) {
         }
     })
     .fail(function (error) {
-        alert("Data hasn't come in!, perhaps just try using the yoda translation as I don't have keys for the others as that would cost me too much. Yoda will default on error");
+        alert("Data hasn't come in!, perhaps just try using the yoda translation as I don't have keys for the others as that would cost me too much. Pretty sure others work but its hard to test when it gets blockeded all the time");
         console.log(error.getAllResponseHeaders());
     })
 }
